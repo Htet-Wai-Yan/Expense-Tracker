@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+$primary: green;
+$btnText: white;
+$secondary: #e9e9e9;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e4e4e4;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
+}
+
+.container {
+  padding: 1rem;
+
+  .section {
+    padding: 0 0 1rem 0;
+    text-transform: capitalize;
+
+    h4 {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .amount {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    input {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      width: 100%;
+    }
+
+    button{
+      width: 100%;
+      margin: 0 0 1rem 0;
+      padding: 0.8rem 1rem;
+      background-color: $primary;
+      border: none;
+      border-radius: 3px;
+      color: $btnText;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .balance-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $secondary;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      padding: 1rem;
+      margin: 1rem 0;
+
+      div:first-child {
+        padding: 0 1rem;
+
+        p {
+          color: green;
+          letter-spacing: 1px;
+          font-weight: bold;
+          font-size: 0.8rem;
+          margin-top: 5px;
+        }
+      }
+
+      div:last-child {
+        padding: 0 1rem;
+
+        p {
+          color: red;
+          letter-spacing: 1px;
+          font-weight: bold;
+          font-size: 0.8rem;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    #transitionHistory {
+      list-style-type: none;
+      padding: 0 5px;
+      height: 500px;
+      overflow-y: scroll !important;
+
+      li {
+        font-size: 0.8rem;
+        background-color: $secondary;
+        padding: 0.5rem;
+        margin-top: 10px; 
+        border-radius: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+        p {
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+.dashboard {
+  text-align: center;
+}
+
+@media screen and (min-width: 769px) {
+  *,
+  *::before,
+  *::after {
+    overflow-y: hidden;
+  }
+
+  .border-left {
+    border-left: 1px solid $secondary;
+  }
+
+  .border-right {
+    border-right: 1px solid $secondary;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 22% auto 22%;
+    min-height: calc(100vh - 46px);
+  }
+}
