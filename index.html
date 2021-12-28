@@ -29,25 +29,25 @@
     <div class="grid-item grid-item-1">
 
       <!-- Input expense starts -->
-      <aside class="container border-right">
+      <aside class="section border-right">
         
-        <div class="section">
+        <div class="container">
           <h3>Budget</h3>
           <input type="number" id="budget" min="0" placeholder="Enter amount..." oninput="validity.valid||(value='');"/>
         </div>
 
-        <div class="section">
+        <div class="container">
           <h3>Expense</h3>
           <input type="text" id="description" placeholder="Description"/>
           <input type="number" id="expense" min="0" placeholder="Enter amount..." oninput="validity.valid||(value='');"/>
         </div>
 
-        <div class="section">
+        <div class="container">
           <input type="date" name="date" id="transitionDate">
           <button type="button" id="transitionBtn">Add Transition</button>
         </div>
 
-        <div class="section">
+        <div class="container">
           <h4>Your balance</h4>
           <p class="amount" id="balance">0</p>
 
@@ -72,8 +72,8 @@
     <div class="grid-item grid-item-2">
 
       <!-- Main content starts -->
-      <Main class="dashboard container">
-        <div class="section">
+      <Main class="dashboard section">
+        <div class="container">
           <h3>Dashboard</h3>
         </div>
       </Main>
@@ -84,8 +84,8 @@
     <div class="grid-item grid-item-3">
 
       <!-- History starts -->
-      <aside class="container border-left">
-        <div class="section">
+      <aside class="section border-left">
+        <div class="container">
           <h3>Transition History</h3>
 
           <ul id="transitionHistory"></ul>

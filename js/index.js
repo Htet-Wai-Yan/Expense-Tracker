@@ -11,7 +11,7 @@ const transitionBtn = document.querySelector('#transitionBtn')
 transitionBtn.addEventListener('click', () => {
 
   // when both input fields are not empty
-  if (budget.value !== "" && expense.value !== ""){
+  if (budget.value !== "" && expense.value !== "") {
 
     calculateBudget()
     calculateExpense()
@@ -37,7 +37,7 @@ transitionBtn.addEventListener('click', () => {
   }
 
   // reset the date picker
-  transitionDate.value = new Date()
+  transitionDate.value = null
 
 })
 
