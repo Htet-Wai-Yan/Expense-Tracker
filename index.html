@@ -30,22 +30,36 @@
 
       <!-- Input expense starts -->
       <aside class="section border-right">
-        
-        <div class="container">
+
+        <form class="addTransition container">
+
           <h3>Budget</h3>
-          <input type="number" id="budget" min="0" placeholder="Enter amount..." oninput="validity.valid||(value='');"/>
-        </div>
+          <input type="number" id="budget" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
 
-        <div class="container">
           <h3>Expense</h3>
-          <input type="text" id="description" placeholder="Description"/>
-          <input type="number" id="expense" min="0" placeholder="Enter amount..." oninput="validity.valid||(value='');"/>
-        </div>
+          <input type="text" id="description" placeholder="Description" />
+          <input type="number" id="expense" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
 
-        <div class="container">
-          <input type="date" name="date" id="transitionDate">
+          <input type="date" name="date" id="transitionDate" />
+          <button type="submit" id="transitionBtn">Add Transition</button>
+
+        </form>
+        
+        <!-- <div class="container">
+          <h3>Budget</h3>
+          <input type="number" id="budget" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
+        </div> -->
+
+        <!-- <div class="container">
+          <h3>Expense</h3>
+          <input type="text" id="description" placeholder="Description" />
+          <input type="number" id="expense" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
+        </div> -->
+
+        <!-- <div class="container">
+          <input type="date" name="date" id="transitionDate" />
           <button type="button" id="transitionBtn">Add Transition</button>
-        </div>
+        </div> -->
 
         <div class="container">
           <h4>Your balance</h4>
