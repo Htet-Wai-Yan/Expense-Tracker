@@ -6,7 +6,7 @@ let description = document.querySelector('#description')
 let balance = document.querySelector('#balance')
 let transitionDate = document.querySelector('#transitionDate')
 
-// set default date to current date
+// set default transition date to current date
 let currentDate = new Date()
 currentDate = `${currentDate.getFullYear()}-${currentDate.getMonth()+1}-${currentDate.getDate()}`
 
