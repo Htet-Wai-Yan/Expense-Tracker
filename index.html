@@ -6,112 +6,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expense Tracker</title>
 
+  <!-- MDB -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"> -->
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-  <!-- Material UI from MBD -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"> -->
-
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/index.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
 
-  <!-- Title bar starts -->
-  <header>
-    <h1>Expense Tracker</h1>
-  </header>
-  <!-- Title bar ends -->
+  <main class="container-fluid">
+    <header>
+      <h1 class="text-center fw-bold text-success">Expense Tracker</h1>
+    </header>
 
-  <!-- Apply grid in plain css -->
-  <div class="grid-container">
-    <div class="grid-item grid-item-1">
+    <form action="" id="new_transition"></form>
 
-      <!-- Input expense starts -->
-      <aside class="section border-right">
-
-        <form class="addTransition container">
-
-          <h3>Budget</h3>
-          <input type="number" id="budget" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
-
-          <h3>Expense</h3>
-          <input type="text" id="description" placeholder="Description" />
-          <input type="number" id="expense" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
-
-          <input type="date" name="date" id="transitionDate" />
-          <button type="submit" id="transitionBtn">Add Transition</button>
-
-        </form>
-        
-        <!-- <div class="container">
-          <h3>Budget</h3>
-          <input type="number" id="budget" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
-        </div> -->
-
-        <!-- <div class="container">
-          <h3>Expense</h3>
-          <input type="text" id="description" placeholder="Description" />
-          <input type="number" id="expense" min="0" step="any" placeholder="Enter amount..." oninput="validity.valid||(value='');" />
-        </div> -->
-
-        <!-- <div class="container">
-          <input type="date" name="date" id="transitionDate" />
-          <button type="button" id="transitionBtn">Add Transition</button>
-        </div> -->
-
-        <div class="container">
-          <h4>Your balance</h4>
-          <p class="amount" id="balance">0</p>
-
-          <div class="balance-container">
-            <div>
-              <h4>Budget</h4>
-              <p id="budgetAmount">0</p>
-            </div>
-            
-            <div>
-              <h4>Expense</h4>
-              <p id="expenseAmount">0</p>
-            </div>
-          </div>
-        </div>
-        
-      </aside>
-      <!-- Input expense ends -->
-
-    </div>
-
-    <div class="grid-item grid-item-2">
-
-      <!-- Main content starts -->
-      <Main class="dashboard section">
-        <div class="container">
-          <h3>Dashboard</h3>
-        </div>
-      </Main>
-      <!-- Main content ends -->
-
-    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="text-success">Date</th>
+          <th scope="col" class="text-success">Description</th>
+          <th scope="col" class="text-success">Amount</th>
+          <th scope="col" class="text-success">Categories</th>
+          <th scope="col" class="text-success">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableData">
+        <tr>
+          <td class="align-middle">
+            <input type="date" id="date" class="form-control"/>
+          </td>
+          <td class="align-middle">
+            <input type="text" id="description" class="form-control"/>
+          </td>
+          <td class="align-middle">
+            <input type="number" id="amount" min="0" class="form-control"/>
+          </td>
+          <td class="align-middle">
+            <select class="form-select text-success">
+              <option selected>Choose</option>
+              <option value="1">Income</option>
+              <option value="2">Expense</option>
+            </select>
+          </td>
+          <td class="align-middle">
+            <button class="btn btn-secondary" type="submit" id="addBtn" form="new_transition">
+              <i 
+                class="fas fa-plus-circle text-success"
+                style="cursor: pointer;"
+              ></i>
+            </button>
+          </td>
+        </tr>
+        <!-- Generate from javascript -->
+      </tbody>
+    </table>
     
-    <div class="grid-item grid-item-3">
-
-      <!-- History starts -->
-      <aside class="section border-left">
-        <div class="container">
-          <h3>Transition History</h3>
-
-          <ul id="transitionHistory"></ul>
-        </div>
-      </aside>
-      <!-- History ends -->
-
-    </div>
-  </div>
+    <!-- Display and hide with javascript -->
+    <h5 class="alert alert-warning d-none">Complete all the fields</h5>
+  </main>
 
   <!-- JS file -->
-  <script src="js/index.js"></script>
+  <script src="js/main.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script> -->
 
 </body>
 </html>
