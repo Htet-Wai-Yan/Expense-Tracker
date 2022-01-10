@@ -5,7 +5,7 @@ class Transition {
     this.date = new Date(_date).toLocaleDateString('en-GB') // convert to dd/mm/yyyy
     this.description = _description
     this.amount = _amount
-    this.category = _category == "1" ? "Income" : "Expense"
+    this.category = _category == "1" || _category == "Choose" ? "Income" : "Expense"
   }
 }
 
@@ -15,7 +15,7 @@ class UI {
   static displayTransition() {
 
     // TO-DO: get this from localStorage
-    const storedTransition = []
+    let storedTransition = Storage.getTransition()
     
     storedTransition.forEach(transition => UI.addTransition(transition))
 
@@ -31,9 +31,7 @@ class UI {
       <td class="align-middle">${newTransition.amount} MMK</td>
       <td class="align-middle">${newTransition.category}</td>
       <td class="align-middle">
-        <button class="btn btn-secondary deleteBtn">
-          <i class="fas fa-minus-circle text-danger"></i>
-        </button>
+        <i class="fas fa-minus-circle text-danger deleteBtn btn btn-secondary"></i>
       </td>
     `
 
@@ -51,14 +49,38 @@ class UI {
 
     alert.classList.remove('d-none')
 
-    setTimeout(() => alert.classList.add('d-none'),2000)
+    setTimeout(() => alert.classList.add('d-none'), 2000)
   }
 
   static clearField() {
     document.querySelector('#date').value = ""
     document.querySelector('#description').value =""
     document.querySelector('#amount').value = ""
-    document.querySelector('.form-select').value = "Choose one"
+    document.querySelector('.form-select').value = "Choose"
+  }
+}
+
+class Storage {
+  static getTransition() {
+    let transitions = localStorage.getItem('transitions') !== null ? JSON.parse(localStorage.getItem('transitions')) : []
+
+    return transitions
+  }
+
+  static storeTransition(newTransition) {
+    let transitions = Storage.getTransition()
+
+    transitions.push(newTransition)
+
+    localStorage.setItem('transitions', JSON.stringify(transitions))
+  }
+
+  static deleteTransition(eleTarget) {
+    let transitions = Storage.getTransition()
+
+    transitions.splice(UI.removeTransition, 1)
+
+    localStorage.setItem('transitions', JSON.stringify(transitions))
   }
 }
 
@@ -78,19 +100,25 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
   let category = document.querySelector('.form-select').value
 
   // validate the input fields
-  if(!date || !description || !amount || !category || category == "Choose one") {
+  if(!date || !description || !amount || !category || category == "Choose") {
+
     UI.showReminder()
+
   } else {
+
     let newTransition = new Transition(date, description, amount, category)
 
     UI.addTransition(newTransition)
+
+    Storage.storeTransition(newTransition)
 
     UI.clearField()
   }
 
 })
 
-// Controller: Remove items from the table
+// Controller: Remove item from the table
 document.querySelector('#tableData').addEventListener('click', (element) => {
   UI.removeTransition(element.target)
+  Storage.deleteTransition(element.target)
 })

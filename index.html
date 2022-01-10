@@ -23,54 +23,57 @@
 
   <main class="container-fluid">
     <header>
-      <h1 class="text-center fw-bold text-success">Expense Tracker</h1>
+      <h1 class="text-center text-success fw-bold mt-3">Budget Tracker</h1>
     </header>
 
     <form action="" id="new_transition"></form>
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col" class="text-success">Date</th>
-          <th scope="col" class="text-success">Description</th>
-          <th scope="col" class="text-success">Amount</th>
-          <th scope="col" class="text-success">Categories</th>
-          <th scope="col" class="text-success">Action</th>
-        </tr>
-      </thead>
-      <tbody id="tableData">
-        <tr>
-          <td class="align-middle">
-            <input type="date" id="date" class="form-control"/>
-          </td>
-          <td class="align-middle">
-            <input type="text" id="description" class="form-control"/>
-          </td>
-          <td class="align-middle">
-            <input type="number" id="amount" min="0" class="form-control"/>
-          </td>
-          <td class="align-middle">
-            <select class="form-select text-success">
-              <option selected>Choose</option>
-              <option value="1">Income</option>
-              <option value="2">Expense</option>
-            </select>
-          </td>
-          <td class="align-middle">
-            <button class="btn btn-secondary" type="submit" id="addBtn" form="new_transition">
-              <i 
-                class="fas fa-plus-circle text-success"
-                style="cursor: pointer;"
-              ></i>
-            </button>
-          </td>
-        </tr>
-        <!-- Generate from javascript -->
-      </tbody>
-    </table>
-    
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="text-success">Date</th>
+            <th scope="col" class="text-success">Description</th>
+            <th scope="col" class="text-success">Amount</th>
+            <th scope="col" class="text-success">Categories</th>
+            <th scope="col" class="text-success">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableData">
+          <tr>
+            <td class="align-middle">
+              <input type="date" id="date" class="form-control"/>
+            </td>
+            <td class="align-middle">
+              <input type="text" id="description" class="form-control" placeholder="Summarized note..."/>
+            </td>
+            <td class="align-middle">
+              <input type="number" id="amount" min="0" class="form-control" placeholder="Only in MMK"/>
+            </td>
+            <td class="align-middle">
+              <select class="form-select text-success">
+                <option selected>Choose</option>
+                <option value="1">Income</option>
+                <option value="2">Expense</option>
+              </select>
+            </td>
+            <td class="align-middle">
+              <button class="btn btn-secondary" type="submit" id="addBtn" form="new_transition">
+                <i 
+                  class="fas fa-plus-circle text-success"
+                  style="cursor: pointer;"
+                ></i>
+              </button>
+            </td>
+          </tr>
+          <!-- Generate from javascript -->
+        </tbody>
+      </table>
+    </div>
+
     <!-- Display and hide with javascript -->
     <h5 class="alert alert-warning d-none">Complete all the fields</h5>
+    
   </main>
 
   <!-- JS file -->
