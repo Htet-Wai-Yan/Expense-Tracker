@@ -19,3 +19,5 @@ The javaScript concepts included in this exercise are :
 - JS Module
 - Using the HTML form functionality inside the HTML table tag
 - Assign the click event to dynamically created HTML element
+
+Please see the live demo in this [link](https://htet-wai-yan.github.io/Expense-Tracker/)
