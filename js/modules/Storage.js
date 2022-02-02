@@ -1,5 +1,3 @@
-import {UI} from "./UI.js"
-
 class Storage {
   // get from local storage
   static getTransition() {
@@ -10,7 +8,7 @@ class Storage {
 
   // store from local storage
   static storeTransition(newTransition) {
-    let transitions = Storage.getTransition()
+    let transitions = this.getTransition()
 
     transitions.push(newTransition)
 
@@ -18,13 +16,18 @@ class Storage {
   }
 
   // remove from local storage
-  static deleteTransition(eleTarget) {
-    let transitions = Storage.getTransition()
+  static deleteTransition(id) {
+    let transitions = this.getTransition()
 
-    transitions.splice(eleTarget, 1)
+    transitions.forEach((transition, index) => {
+      if(transition.id == id) {
+        transitions.splice(index, 1)
+      }
+    })
 
     localStorage.setItem('transitions', JSON.stringify(transitions))
   }
+
 }
 
 export {Storage}
