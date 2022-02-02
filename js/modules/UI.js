@@ -18,6 +18,7 @@ class UI {
 
     const tableData = document.querySelector('#tableData')
     const tr = document.createElement('tr')
+    
     tr.innerHTML = `
       <td class="align-middle fw-bold">${newTransition.id}</td>
       <td class="align-middle">${newTransition.date}</td>

@@ -44,7 +44,7 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
 })
 
 // Controller: Remove item from the table
-document.addEventListener('click', (element) => {
+document.querySelector('#tableData').addEventListener('click', (element) => {
 
   // assign event to dynamically created HTML element
   UI.removeTransition(element.target)
