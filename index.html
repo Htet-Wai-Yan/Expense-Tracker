@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="UTF-8">
@@ -17,11 +18,12 @@
   <link rel="stylesheet" href="css/main.css">
 
 </head>
+
 <body>
 
   <main class="container-fluid">
     <header>
-      <h1 class="text-center text-success fw-bold mt-3">Budget Tracker</h1>
+      <h1 class="text-center text-success fw-bold mt-3">Expense Tracker</h1>
     </header>
 
     <form action="" id="new_transition"></form>
@@ -42,13 +44,13 @@
           <tr>
             <td></td>
             <td class="align-middle">
-              <input type="date" id="date" class="form-control"/>
+              <input type="date" id="date" class="form-control" />
             </td>
             <td class="align-middle">
-              <input type="text" id="description" class="form-control" placeholder="Summarized note..."/>
+              <input type="text" id="description" class="form-control" placeholder="Summarized note..." />
             </td>
             <td class="align-middle">
-              <input type="number" id="amount" min="0" class="form-control" placeholder="Only in MMK..."/>
+              <input type="number" id="amount" min="0" class="form-control" placeholder="Only in MMK..." />
             </td>
             <td class="align-middle">
               <select class="form-select text-success">
@@ -59,10 +61,7 @@
             </td>
             <td class="align-middle">
               <button class="btn btn-secondary" type="submit" id="addBtn" form="new_transition">
-                <i 
-                  class="fas fa-plus-circle text-success"
-                  style="cursor: pointer;"
-                ></i>
+                <i class="fas fa-plus-circle text-success" style="cursor: pointer;"></i>
               </button>
             </td>
           </tr>
@@ -103,4 +102,5 @@
   <script type="module" src="./js/main.js"></script>
 
 </body>
+
 </html>
