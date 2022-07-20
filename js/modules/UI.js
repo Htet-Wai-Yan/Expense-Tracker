@@ -1,5 +1,5 @@
-import {Storage} from "./Storage.js"
-import {Calculation} from "./Calculation.js"
+import Storage from "./Storage.js"
+import Calculation from "./Calculation.js"
 
 // View: Display the data in the table rows
 class UI {
@@ -9,7 +9,7 @@ class UI {
 
     // Get the data from localStorage
     let storedTransition = Storage.getTransition()
-    
+
     storedTransition.forEach(transition => this.addTransition(transition))
 
   }
@@ -18,7 +18,7 @@ class UI {
 
     const tableData = document.querySelector('#tableData')
     const tr = document.createElement('tr')
-    
+
     tr.innerHTML = `
       <td class="align-middle fw-bold">${newTransition.id}</td>
       <td class="align-middle">${newTransition.date}</td>
@@ -31,11 +31,11 @@ class UI {
     `
 
     tableData.appendChild(tr)
-    
+
   }
 
   static removeTransition(eleTarget) {
-    if(eleTarget.classList.contains('delete')) {
+    if (eleTarget.classList.contains('delete')) {
       eleTarget.parentElement.parentElement.remove()
     }
   }
@@ -50,7 +50,7 @@ class UI {
 
   static clearField() {
     document.querySelector('#date').value = ""
-    document.querySelector('#description').value =""
+    document.querySelector('#description').value = ""
     document.querySelector('#amount').value = ""
     document.querySelector('.form-select').value = "Choose"
   }
@@ -66,4 +66,4 @@ class UI {
 
 }
 
-export {UI}
+export default UI

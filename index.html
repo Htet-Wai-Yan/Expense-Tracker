@@ -42,7 +42,7 @@
         </thead>
         <tbody id="tableData">
           <tr>
-            <td></td>
+            <td class="align-middle">#</td>
             <td class="align-middle">
               <input type="date" id="date" class="form-control" />
             </td>
@@ -65,33 +65,40 @@
               </button>
             </td>
           </tr>
+
           <!-- Generate from javascript -->
+
         </tbody>
       </table>
     </div>
+
     <!-- Display and hide with javascript -->
     <h5 class="alert alert-warning d-none">Complete all the fields</h5>
 
-    <div class="card-group">
-
-      <div class="card border border-1">
-        <div class="card-body">
-          <h4 class="card-title text-success fw-bold">Income</h4>
-          <p id="totalIncome"></p>
-        </div>
+    <div class="row">
+      <div class="col-md-8">
+        Charts
       </div>
-
-      <div class="card border border-1 mx-md-2">
-        <div class="card-body">
-          <h4 class="card-title text-warning fw-bold">Expense</h4>
-          <p id="totalExpense"></p>
+      <div class="col-md-4">
+        <div class="card border border-1">
+          <div class="card-body">
+            <h4 class="card-title text-success fw-bold">Income</h4>
+            <p id="totalIncome"></p>
+          </div>
         </div>
-      </div>
 
-      <div class="card border border-1">
-        <div class="card-body">
-          <h4 class="card-title text-dark fw-bold">Balance</h4>
-          <p id="balance"></p>
+        <div class="card border border-1 my-2">
+          <div class="card-body">
+            <h4 class="card-title text-warning fw-bold">Expense</h4>
+            <p id="totalExpense"></p>
+          </div>
+        </div>
+
+        <div class="card border border-1">
+          <div class="card-body">
+            <h4 class="card-title text-dark fw-bold">Balance</h4>
+            <p id="balance"></p>
+          </div>
         </div>
       </div>
     </div>

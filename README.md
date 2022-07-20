@@ -1,4 +1,4 @@
-# Budget-Tracker
+# Expense-Tracker
 JS basic exercise
 
 This is the javaScript basic exercise applying OOP and MVC concepts using vanilla javaScript. Moreover, JS module approach is also used in this project for code separation.

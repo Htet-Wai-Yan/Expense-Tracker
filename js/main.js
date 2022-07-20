@@ -1,8 +1,7 @@
-import {Transition} from "./modules/Transition.js"
-import {UI} from "./modules/UI.js"
-import {Storage} from "./modules/Storage.js"
-import {Calculation} from "./modules/Calculation.js"
-
+import Transition from "./modules/Transition.js"
+import UI from "./modules/UI.js"
+import Storage from "./modules/Storage.js"
+import Calculation from "./modules/Calculation.js"
 
 // Controller: display all items
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +23,7 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
   let id = Calculation.generateID()
 
   // validate the input fields
-  if(!date || !description || !amount || !category || category == "Choose") {
+  if (!date || !description || !amount || !category || category == "Choose") {
 
     UI.showReminder()
 
@@ -37,10 +36,10 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
     Storage.storeTransition(newTransition)
 
     UI.clearField()
-    
+
     UI.displayAmount()
   }
-  
+
 })
 
 // Controller: Remove item from the table
@@ -49,5 +48,5 @@ document.querySelector('#tableData').addEventListener('click', (element) => {
   UI.removeTransition(element.target)
   Storage.deleteTransition(element.target.parentElement.parentElement.children[0].textContent)
   UI.displayAmount()
-  
+
 })

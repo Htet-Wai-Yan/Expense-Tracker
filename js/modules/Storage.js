@@ -20,7 +20,7 @@ class Storage {
     let transitions = this.getTransition()
 
     transitions.forEach((transition, index) => {
-      if(transition.id == id) {
+      if (transition.id == id) {
         transitions.splice(index, 1)
       }
     })
@@ -30,4 +30,4 @@ class Storage {
 
 }
 
-export {Storage}
+export default Storage
