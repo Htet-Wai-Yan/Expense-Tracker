@@ -21,7 +21,7 @@
 
 <body>
 
-  <main class="container-fluid">
+  <main class="container">
     <header>
       <h1 class="text-center text-success fw-bold mt-3">Expense Tracker</h1>
     </header>
@@ -75,11 +75,20 @@
     <!-- Display and hide with javascript -->
     <h5 class="alert alert-warning d-none">Complete all the fields</h5>
 
-    <div class="row">
-      <div class="col-md-8">
-        Charts
+    <div class="row g-5 mt-1">
+      <div class="col-lg-9 col-md-8">
+        <h1 class="text-success mb-5">Charts</h1>
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <canvas id="doughnutChart"></canvas>
+          </div>
+          <div class="col-lg-6">
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-lg-3 col-md-4">
+        <h1 class="text-success mb-5">Summary</h1>
         <div class="card border border-1">
           <div class="card-body">
             <h4 class="card-title text-success fw-bold">Income</h4>
@@ -105,8 +114,15 @@
 
   </main>
 
+  <footer class="bg-success text-center text-light mt-5 py-1">
+    <small><a href="https://htet-wai-yan.github.io" class="text-light">Htet</a>@2022</small>
+  </footer>
+
   <!-- JS file -->
   <script type="module" src="./js/main.js"></script>
+
+  <!-- Chart JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 
 </body>
 

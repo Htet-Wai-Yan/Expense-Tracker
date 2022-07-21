@@ -42,9 +42,20 @@ class Calculation {
     let totalIncome = incomeArray.reduce((total, nextValue) => total + nextValue)
     let totalExpense = expenseArray.reduce((total, nextValue) => total + nextValue)
 
-    budgetBalance = totalIncome - totalExpense
+    budgetBalance = (totalIncome - totalExpense)
 
-    return [totalIncome, totalExpense, budgetBalance]
+    return [totalIncome.toLocaleString('en-US'), totalExpense.toLocaleString('en-US'), budgetBalance.toLocaleString('en-US')]
+  }
+
+  static generateColors() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color
   }
 
 }

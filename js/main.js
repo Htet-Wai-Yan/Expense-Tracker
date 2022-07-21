@@ -2,11 +2,15 @@ import Transition from "./modules/Transition.js"
 import UI from "./modules/UI.js"
 import Storage from "./modules/Storage.js"
 import Calculation from "./modules/Calculation.js"
+import DoughnutChart from "./modules/charts/DoughnutChart.js"
+import BarChart from "./modules/charts/BarChart.js"
 
 // Controller: display all items
 document.addEventListener('DOMContentLoaded', () => {
   UI.displayTransition()
   UI.displayAmount()
+  DoughnutChart.updateChart()
+  BarChart.updateChart()
 })
 
 // Controller: Add new item
@@ -21,6 +25,7 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
   let amount = parseInt(document.querySelector('#amount').value) // converted to integer
   let category = document.querySelector('.form-select').value
   let id = Calculation.generateID()
+  let color = Calculation.generateColors()
 
   // validate the input fields
   if (!date || !description || !amount || !category || category == "Choose") {
@@ -29,7 +34,7 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
 
   } else {
 
-    let newTransition = new Transition(date, description, amount, category, id)
+    let newTransition = new Transition(date, description, amount, category, id, color)
 
     UI.addTransition(newTransition)
 
@@ -38,6 +43,11 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
     UI.clearField()
 
     UI.displayAmount()
+
+    DoughnutChart.updateChart()
+
+    BarChart.updateChart()
+
   }
 
 })
@@ -48,5 +58,9 @@ document.querySelector('#tableData').addEventListener('click', (element) => {
   UI.removeTransition(element.target)
   Storage.deleteTransition(element.target.parentElement.parentElement.children[0].textContent)
   UI.displayAmount()
+
+  DoughnutChart.updateChart()
+
+  BarChart.updateChart()
 
 })

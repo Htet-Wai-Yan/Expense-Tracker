@@ -23,7 +23,7 @@ class UI {
       <td class="align-middle fw-bold">${newTransition.id}</td>
       <td class="align-middle">${newTransition.date}</td>
       <td class="align-middle">${newTransition.description}</td>
-      <td class="align-middle">${newTransition.amount} MMK</td>
+      <td class="align-middle">${newTransition.amount.toLocaleString('en-US')} MMK</td>
       <td class="align-middle">${newTransition.category}</td>
       <td class="align-middle">
         <i class="fas fa-minus-circle text-danger delete btn btn-secondary"></i>
