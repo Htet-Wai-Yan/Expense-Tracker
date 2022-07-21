@@ -9,9 +9,7 @@ class BarChart {
 
     transitions.map(transition => {
       if (transition.category == "Expense") {
-        if (!labels.includes(transition.description)) { // remove duplicates
-          labels.push(transition.description)
-        }
+        labels.push(transition.description)
       }
     })
 

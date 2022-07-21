@@ -1,5 +1,7 @@
 import Storage from "./Storage.js"
 import Calculation from "./Calculation.js"
+import BarChart from "./charts/BarChart.js"
+import DoughnutChart from "./charts/DoughnutChart.js"
 
 // View: Display the data in the table rows
 class UI {
@@ -62,6 +64,38 @@ class UI {
     document.querySelector('#totalExpense').textContent = `${totalExpense} MMK`
     document.querySelector('#balance').textContent = `${budgetBalance} MMK`
 
+  }
+
+  // Shows message when the lables and data are empty
+  static displayCharts() {
+    const transitions = Storage.getTransition()
+
+    if (transitions.length == 0) {
+
+      // hide canvases when transitions is empty
+      let canvases = document.querySelectorAll("canvas")
+      Array.from(canvases).forEach(canvas => {
+        canvas.style.display = "none"
+      })
+
+      document.querySelector("#doughnutChartMessage").textContent = "Data is empty"
+      document.querySelector("#barChartMessage").textContent = "Data is empty"
+
+
+    } else {
+
+      let canvases = document.querySelectorAll("canvas")
+      Array.from(canvases).forEach(canvas => {
+        canvas.style.display = "block"
+      })
+
+      document.querySelector("#doughnutChartMessage").textContent = ""
+      document.querySelector("#barChartMessage").textContent = ""
+
+      BarChart.updateChart()
+      DoughnutChart.updateChart()
+
+    }
   }
 
 }

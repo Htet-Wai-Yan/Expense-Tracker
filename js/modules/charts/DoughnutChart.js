@@ -1,6 +1,6 @@
 import Storage from "../Storage.js";
 
-class DonughnutChart {
+class DoughnutChart {
 
   // extract the respective data from each transition
   static getLabels() {
@@ -8,9 +8,7 @@ class DonughnutChart {
     let labels = []
 
     transitions.map(transition => {
-      if (!labels.includes(transition.description)) { // remove duplicates
-        labels.push(transition.description)
-      }
+      labels.push(transition.description)
     })
 
     return labels
@@ -74,4 +72,4 @@ class DonughnutChart {
   }
 }
 
-export default DonughnutChart
+export default DoughnutChart

@@ -2,15 +2,12 @@ import Transition from "./modules/Transition.js"
 import UI from "./modules/UI.js"
 import Storage from "./modules/Storage.js"
 import Calculation from "./modules/Calculation.js"
-import DoughnutChart from "./modules/charts/DoughnutChart.js"
-import BarChart from "./modules/charts/BarChart.js"
 
 // Controller: display all items
 document.addEventListener('DOMContentLoaded', () => {
   UI.displayTransition()
   UI.displayAmount()
-  DoughnutChart.updateChart()
-  BarChart.updateChart()
+  UI.displayCharts()
 })
 
 // Controller: Add new item
@@ -44,23 +41,19 @@ document.querySelector('#new_transition').addEventListener('submit', (event) => 
 
     UI.displayAmount()
 
-    DoughnutChart.updateChart()
-
-    BarChart.updateChart()
+    UI.displayCharts()
 
   }
-
 })
 
 // Controller: Remove item from the table
 document.querySelector('#tableData').addEventListener('click', (element) => {
 
   UI.removeTransition(element.target)
+
   Storage.deleteTransition(element.target.parentElement.parentElement.children[0].textContent)
+
   UI.displayAmount()
 
-  DoughnutChart.updateChart()
-
-  BarChart.updateChart()
-
+  UI.displayCharts()
 })
