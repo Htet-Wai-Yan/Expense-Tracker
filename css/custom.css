@@ -1,0 +1,9 @@
+.alert {
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 166, 0, 0.8);
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}

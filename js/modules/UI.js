@@ -28,7 +28,7 @@ class UI {
       <td class="align-middle">${newTransition.amount.toLocaleString('en-US')} MMK</td>
       <td class="align-middle">${newTransition.category}</td>
       <td class="align-middle">
-        <i class="fas fa-minus-circle text-danger delete btn btn-secondary"></i>
+        <button class="btn btn-warning delete">del</button>
       </td>
     `
 

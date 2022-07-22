@@ -8,14 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expense Tracker</title>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-
-  <!-- Fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/main.css">
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.custom.min.css" />
+  <!-- Custom css -->
+  <link rel="stylesheet" href="css/custom.css">
 
 </head>
 
@@ -60,8 +62,8 @@
               </select>
             </td>
             <td class="align-middle">
-              <button class="btn btn-secondary" type="submit" id="addBtn" form="new_transition">
-                <i class="fas fa-plus-circle text-success" style="cursor: pointer;"></i>
+              <button class="btn btn-success" type="submit" id="addBtn" form="new_transition">
+                add
               </button>
             </td>
           </tr>
@@ -73,12 +75,11 @@
     </div>
 
     <!-- Display and hide with javascript -->
-    <h5 class="alert alert-warning d-none position-absolute top-25 start-50 translate-middle">Complete all the fields
-    </h5>
+    <h5 class="alert d-none">Complete all the fields</h5>
 
     <div class="row g-5 mt-1">
       <div class="col-lg-9 col-md-8">
-        <h1 class="text-success mb-5">Charts</h1>
+        <h2 class="text-success mb-5">Charts</h2>
         <div class="row g-5">
           <div class="col-lg-6 d-flex justify-content-center align-items-center">
             <h2 id="doughnutChartMessage" class="text-dark"></h2>
@@ -91,24 +92,24 @@
         </div>
       </div>
       <div class="col-lg-3 col-md-4">
-        <h1 class="text-success mb-5">Summary</h1>
+        <h2 class="text-success mb-5">Summary</h2>
         <div class="card border border-1">
           <div class="card-body">
-            <h4 class="card-title text-success fw-bold">Income</h4>
+            <h5 class="card-title text-success fw-bold">Income</h5>
             <p id="totalIncome"></p>
           </div>
         </div>
 
         <div class="card border border-1 my-2">
           <div class="card-body">
-            <h4 class="card-title text-warning fw-bold">Expense</h4>
+            <h5 class="card-title text-warning fw-bold">Expense</h5>
             <p id="totalExpense"></p>
           </div>
         </div>
 
         <div class="card border border-1">
           <div class="card-body">
-            <h4 class="card-title text-dark fw-bold">Balance</h4>
+            <h5 class="card-title text-dark fw-bold">Balance</h5>
             <p id="balance"></p>
           </div>
         </div>
@@ -120,6 +121,9 @@
   <footer class="bg-success text-center text-light mt-5 py-1">
     <small>Written by <a href="https://htet-wai-yan.github.io" class="text-light">Htet Wai Yan</a> @ 2022</small>
   </footer>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb/mdb.custom.min.js"></script>
 
   <!-- JS file -->
   <script type="module" src="./js/main.js"></script>
