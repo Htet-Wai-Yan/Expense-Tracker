@@ -3,8 +3,8 @@ import Storage from "../Storage.js";
 class DoughnutChart {
 
   // extract the respective data from each transition
-  static getLabels() {
-    let transitions = Storage.getTransition()
+  static async getLabels() {
+    let transitions = await Storage.getTransition()
     let labels = []
 
     transitions.map(transition => {
@@ -14,8 +14,8 @@ class DoughnutChart {
     return labels
   }
 
-  static getData() {
-    let transitions = Storage.getTransition()
+  static async getData() {
+    let transitions = await Storage.getTransition()
     let labels = []
 
     transitions.map(transition => {
@@ -25,8 +25,8 @@ class DoughnutChart {
     return labels
   }
 
-  static getColor() {
-    let transitions = Storage.getTransition()
+  static async getColor() {
+    let transitions = await Storage.getTransition()
     let labels = []
 
     transitions.map(transition => {
@@ -64,10 +64,10 @@ class DoughnutChart {
   )
 
   // Update the chart labels and data with updated transitions
-  static updateChart() {
-    this.doughnutChart.data.labels = this.getLabels()
-    this.doughnutChart.data.datasets[0].data = this.getData()
-    this.doughnutChart.data.datasets[0].backgroundColor = this.getColor()
+  static async updateChart() {
+    this.doughnutChart.data.labels = await this.getLabels()
+    this.doughnutChart.data.datasets[0].data = await this.getData()
+    this.doughnutChart.data.datasets[0].backgroundColor = await this.getColor()
     this.doughnutChart.update()
   }
 }

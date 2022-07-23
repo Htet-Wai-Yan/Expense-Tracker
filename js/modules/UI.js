@@ -74,6 +74,7 @@ class UI {
 
       // hide canvases when transitions is empty
       let canvases = document.querySelectorAll("canvas")
+
       Array.from(canvases).forEach(canvas => {
         canvas.style.display = "none"
       })
@@ -85,6 +86,7 @@ class UI {
     } else {
 
       let canvases = document.querySelectorAll("canvas")
+
       Array.from(canvases).forEach(canvas => {
         canvas.style.display = "block"
       })
