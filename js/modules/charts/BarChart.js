@@ -2,44 +2,6 @@ import Storage from "../Storage.js";
 
 class BarChart {
 
-  // extract the respective data from each transition
-  static async getLabels() {
-    let transitions = await Storage.getTransition()
-    let labels = []
-
-    transitions.map(transition => {
-      if (transition.category == "Expense") {
-        labels.push(transition.description)
-      }
-    })
-
-    return labels
-  }
-
-  static async getData() {
-    let transitions = await Storage.getTransition()
-    let labels = []
-
-    transitions.map(transition => {
-      if (transition.category == "Expense") {
-        labels.push(transition.amount)
-      }
-    })
-
-    return labels
-  }
-
-  static async getColor() {
-    let transitions = await Storage.getTransition()
-    let labels = []
-
-    transitions.map(transition => {
-      labels.push(transition.color)
-    })
-
-    return labels
-  }
-
   // Setup block
   static data = {
     labels: [],
@@ -69,9 +31,18 @@ class BarChart {
 
   // Update the chart labels and data with updated transitions
   static async updateChart() {
-    this.barChart.data.labels = await this.getLabels()
-    this.barChart.data.datasets[0].data = await this.getData()
-    this.barChart.data.datasets[0].backgroundColor = await this.getColor()
+    const transitions = await Storage.getTransition()
+
+    transitions.map(transition => {
+      if (transition.category == "Expense") {
+
+        this.barChart.data.labels.push(transition.description)
+        this.barChart.data.datasets[0].data.push(transition.amount)
+        this.barChart.data.datasets[0].backgroundColor.push(transition.color)
+
+      }
+    })
+
     this.barChart.update()
   }
 }

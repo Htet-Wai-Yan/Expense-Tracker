@@ -7,10 +7,10 @@ import DoughnutChart from "./charts/DoughnutChart.js"
 class UI {
 
   // Transitions
-  static displayTransition() {
+  static async displayTransition() {
 
     // Get the data from localStorage
-    let storedTransition = Storage.getTransition()
+    let storedTransition = await Storage.getTransition()
 
     storedTransition.forEach(transition => this.addTransition(transition))
 
@@ -67,8 +67,8 @@ class UI {
   }
 
   // Shows message when the lables and data are empty
-  static displayCharts() {
-    const transitions = Storage.getTransition()
+  static async displayCharts() {
+    const transitions = await Storage.getTransition()
 
     if (transitions.length == 0) {
 
