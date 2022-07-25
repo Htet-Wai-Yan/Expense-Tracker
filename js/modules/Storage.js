@@ -7,8 +7,8 @@ class Storage {
   }
 
   // store from local storage
-  static storeTransition(newTransition) {
-    let transitions = this.getTransition()
+  static async storeTransition(newTransition) {
+    let transitions = await this.getTransition()
 
     transitions.push(newTransition)
 
@@ -16,8 +16,8 @@ class Storage {
   }
 
   // remove from local storage
-  static deleteTransition(id) {
-    let transitions = this.getTransition()
+  static async deleteTransition(id) {
+    let transitions = await this.getTransition()
 
     transitions.forEach((transition, index) => {
       if (transition.id == id) {
